@@ -12,6 +12,6 @@ class Api::ProductsController < ApplicationController
 
   def second_product_action
     @product = Product.find_by(2)
-    render "second_product.json.jbuilder"
+    render "second_product.json.jbuilder"p
   end
 end
