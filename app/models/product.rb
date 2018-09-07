@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   validates :price, numericality: { only_decimal: true }
   validates :price, numericality: { greater_than: 0 }
 
+  belongs_to :supplier
+
   def is_discounted?
     price < 345
   end
