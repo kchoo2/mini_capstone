@@ -1,5 +1,5 @@
 class Api::OrdersController < ApplicationController
-  before_action :authenticate_user, #except: // only: [:index, :create]
+  before_action :authenticate_user #, except: // only: [:index, :create]
 
   def index
       @orders = current_user.orders
@@ -15,5 +15,7 @@ class Api::OrdersController < ApplicationController
 
       @order.build_totals
       @order.save
+
+      render 'show.json.jbuilder'
   end
 end
